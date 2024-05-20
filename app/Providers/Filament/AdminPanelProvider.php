@@ -6,9 +6,10 @@ use Filament\Pages;
 use Filament\Panel;
 use Filament\Widgets;
 use Filament\PanelProvider;
-use Filament\Navigation\MenuItem;
 use App\Filament\Pages\Settings;
+use Filament\Navigation\MenuItem;
 use Filament\Support\Colors\Color;
+use Filament\Navigation\NavigationItem;
 use Filament\Http\Middleware\Authenticate;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -59,6 +60,26 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->userMenuItems([
                 'profile' => MenuItem::make()->label('Cambiar Contraseña'),
-            ]);
+            ])
+            ->navigationItems([
+                NavigationItem::make('Google')
+                    ->url('https://google.com', shouldOpenInNewTab: true)
+                    ->icon('heroicon-o-link')
+                    ->group('Enlaces Útiles')
+                    ->sort(1),
+                NavigationItem::make('Chaco.gov.ar')
+                    ->url('https://chaco.gov.ar', shouldOpenInNewTab: true)
+                    ->icon('heroicon-o-presentation-chart-line')
+                    ->group('Enlaces Útiles')
+                    ->sort(2),
+                NavigationItem::make('Consejo de la Magistratura')
+                    ->url('https://conmagchaco.gov.ar', shouldOpenInNewTab: true)
+                    ->icon('heroicon-o-presentation-chart-line')
+                    ->group('Enlaces Útiles')
+                    ->sort(3),
+            ])
+
+
+            ;
     }
 }
