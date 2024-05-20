@@ -6,7 +6,6 @@ use Filament\Pages;
 use Filament\Panel;
 use Filament\Widgets;
 use Filament\PanelProvider;
-use App\Filament\Pages\Settings;
 use Filament\Navigation\MenuItem;
 use Filament\Support\Colors\Color;
 use Filament\Navigation\NavigationItem;
@@ -32,7 +31,12 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->profile()
             ->colors([
-                'primary' => Color::Amber,
+            'danger' => Color::Rose,
+            'gray' => Color::Gray,
+            'info' => Color::Blue,
+            'primary' => Color::Amber,
+            'success' => Color::Emerald,
+            'warning' => Color::Orange,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
@@ -77,9 +81,7 @@ class AdminPanelProvider extends PanelProvider
                     ->icon('heroicon-o-presentation-chart-line')
                     ->group('Enlaces Útiles')
                     ->sort(3),
-            ])
+            ]);
 
-
-            ;
     }
 }
