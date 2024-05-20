@@ -38,6 +38,11 @@ class AdminPanelProvider extends PanelProvider
             'success' => Color::Emerald,
             'warning' => Color::Orange,
             ])
+            ->font('Albert Sans')
+            ->brandLogo(asset('images/logo.svg'))
+            ->brandName(env('APP_NAME'))
+            ->brandLogoHeight('2rem')
+            ->favicon(asset('images/favicon.png'))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
@@ -77,7 +82,7 @@ class AdminPanelProvider extends PanelProvider
                     ->group('Enlaces Útiles')
                     ->sort(2),
                 NavigationItem::make('Consejo de la Magistratura')
-                    ->url('https://conmagchaco.gov.ar', shouldOpenInNewTab: true)
+                    ->url('https://www.consejo.gov.ar', shouldOpenInNewTab: true)
                     ->icon('heroicon-o-presentation-chart-line')
                     ->group('Enlaces Útiles')
                     ->sort(3),
